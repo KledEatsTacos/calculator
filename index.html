@@ -6,25 +6,27 @@
 <title>Calculator</title>
 <style>
   body {
-    font-size: 24px; 
+    font-size: 1.5rem; 
+    padding: 1rem;
   }
 
   h1 {
-    font-size: 36px; 
+    font-size: 2rem; 
   }
 
   p {
-    font-size: 20px; 
+    font-size: 1.25rem; 
   }
 
   .loading-spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #34db3f;
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #34db3f;
     border-radius: 50%;
-    width: 150px; 
-    height: 150px; 
+    width: 6rem; 
+    height: 6rem; 
     animation: spin 2s linear infinite;
     display: none;
+    margin: 1rem auto;
   }
 
   @keyframes spin {
@@ -34,6 +36,32 @@
 
   .slow-image {
     display: none;
+    margin: 1rem auto;
+  }
+
+  input, button {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+  }
+
+  button {
+    background-color: #34db3f;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+  }
+
+  button:hover {
+    background-color: #28a745;
+  }
+
+  @media (min-width: 600px) {
+    input, button {
+      width: auto;
+    }
   }
 </style>
 </head>
@@ -44,10 +72,10 @@
 
 <div class="loading-spinner"></div>
 
-<input type="text" id="firstNumber" style="font-size: 24px;" placeholder="Enter first number">
-<span style="font-size: 24px;"> + </span>
-<input type="text" id="secondNumber" style="font-size: 24px;" placeholder="Enter second number"> 
-<button onclick="calculate()" style="font-size: 24px;">Calculate</button>
+<input type="text" id="firstNumber" placeholder="Enter first number">
+<span style="font-size: 1.5rem;"> + </span>
+<input type="text" id="secondNumber" placeholder="Enter second number"> 
+<button onclick="calculate()">Calculate</button>
 
 <canvas class="slow-image" width="640" height="360"></canvas>
 
